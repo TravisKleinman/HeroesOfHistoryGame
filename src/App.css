@@ -30,6 +30,7 @@
   align-items: flex-end;
   padding: 0 50px;
   align-items: center;
+  margin: 10px 0px;
 }
 
 .playerBox {
@@ -61,10 +62,35 @@
   align-items: flex-start;
   padding: 0 50px;
   align-items: center;
+  margin: 10px 0px
+}
+
+.centerColumn {
+  display: flex;
+  flex-flow: column;
+}
+
+.secondCenterBox {
+  margin: 10px 0px;
+  padding: 5px;
+  border-radius: 2%;
+  color: red;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.start {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 350px;
+  height: 250px;
+}
+
+.centerText {
+  font-size: xx-large;
 }
 
 .card {

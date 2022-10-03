@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Game = (props) => {
   const { player1Heros, player2Heros, firstTurn } = props;
 
-  const [currentHealth, setCurrentHealth] = useState(
+  const [currentHealth1, setCurrentHealth1] = useState(
     newHeros[player1Heros[0]].health
   );
   const [currentHealth2, setCurrentHealth2] = useState(
@@ -19,12 +19,12 @@ const Game = (props) => {
     newHeros[player2Heros[1]].health
   );
 
-  const [cardSelected, setCardSelected] = useState(false);
+  const [cardSelected1, setCardSelected1] = useState(false);
   const [cardSelected2, setCardSelected2] = useState(false);
   const [cardSelected3, setCardSelected3] = useState(false);
   const [cardSelected4, setCardSelected4] = useState(false);
 
-  const [cardToBeAffected, setCardToBeAffected] = useState(false);
+  const [cardToBeAffected1, setCardToBeAffected1] = useState(false);
   const [cardToBeAffected2, setCardToBeAffected2] = useState(false);
   const [cardToBeAffected3, setCardToBeAffected3] = useState(false);
   const [cardToBeAffected4, setCardToBeAffected4] = useState(false);
@@ -136,66 +136,137 @@ const Game = (props) => {
     window.location.reload();
   };
 
-  console.log(cardToBeAffected);
+  const [heroCard, setHeroCard] = useState(false);
 
-  // console.log(turn);
+  const generateHero = () => {
+    setHeroCard(true);
+  };
+  // const [heroCard2, setHeroCard2] = useState(false);
+  // const [heroCard3, setHeroCard3] = useState(false);
+  // const [heroCard4, setHeroCard4] = useState(false);
+
   return (
     <div className="main">
-      <div
-        className="pointer centerBtn brownBackGround cardBorder"
-        onClick={resetGame}
-      >
-        Reset Game
-      </div>
       <div className="rowSB player1">
-        <HeroCard
-          {...player1Hero1}
-          hero={player1Hero1}
-          onAbility={onAbility(player1Hero1, setCurrentHealth, currentHealth)}
-          cardSelected={cardSelected}
-          currentHealth={currentHealth}
-          cardAffected={cardToBeAffected}
-          setCardToBeAffected={setCardToBeAffected}
-          setCardSelected={setCardSelected}
-        />
-        <div className="playerBox">
-          <div className="nameText">{playerNameEntry || "Player One"}</div>
-          <div className="turnText cardBorder">{yourTurn()}</div>
+        <div>
+          {heroCard ? (
+            <HeroCard
+              {...player1Hero1}
+              onAbility={onAbility(
+                player1Hero1,
+                setCurrentHealth1,
+                currentHealth1
+              )}
+              currentHealth={currentHealth1}
+              cardSelected={cardSelected1}
+              cardAffected={cardToBeAffected1}
+              setCardToBeAffected={setCardToBeAffected1}
+              setCardSelected={setCardSelected1}
+            />
+          ) : (
+            ""
+          )}
         </div>
-        <HeroCard
-          {...player1Hero2}
-          onAbility={onAbility(player1Hero2, setCurrentHealth2, currentHealth2)}
-          currentHealth={currentHealth2}
-          cardSelected={cardSelected2}
-          cardAffected={cardToBeAffected2}
-          setCardToBeAffected={setCardToBeAffected2}
-          setCardSelected={setCardSelected2}
-        />
+        <div className="centerColumn">
+          <div className={heroCard ? "playerBox" : ""}>
+            <div className="nameText">
+              {heroCard ? playerNameEntry || "Player One" : ""}
+            </div>
+            <div className={heroCard ? "turnText cardBorder" : ""}>
+              {heroCard ? yourTurn() : ""}
+            </div>
+          </div>
+          <div
+            className={
+              heroCard
+                ? "secondCenterBox"
+                : "secondCenterBox pointer centerBtn brownBackGround start"
+            }
+            onClick={generateHero}
+          >
+            <div className="centerText">{heroCard ? "" : "Start Game"}</div>
+          </div>
+        </div>
+        <div>
+          {heroCard ? (
+            <HeroCard
+              {...player1Hero2}
+              onAbility={onAbility(
+                player1Hero2,
+                setCurrentHealth2,
+                currentHealth2
+              )}
+              currentHealth={currentHealth2}
+              cardSelected={cardSelected2}
+              cardAffected={cardToBeAffected2}
+              setCardToBeAffected={setCardToBeAffected2}
+              setCardSelected={setCardSelected2}
+            />
+          ) : (
+            ""
+          )}
+        </div>
       </div>
-      <div className="middleBorder"></div>
+      <div className={heroCard ? "middleBorder" : ""}></div>
       <div className="rowSB player2">
-        <HeroCard
-          {...player2Hero1}
-          onAbility={onAbility(player2Hero1, setCurrentHealth3, currentHealth3)}
-          cardSelected={cardSelected3}
-          currentHealth={currentHealth3}
-          cardAffected={cardToBeAffected3}
-          setCardToBeAffected={setCardToBeAffected3}
-          setCardSelected={setCardSelected3}
-        />
-        <div className="playerBox">
-          <div className="nameText">{playerNameEntry2 || "Player Two"}</div>
-          <div className="turnText cardBorder">{yourTurn(2)}</div>
+        <div>
+          {heroCard ? (
+            <HeroCard
+              {...player2Hero1}
+              onAbility={onAbility(
+                player2Hero1,
+                setCurrentHealth3,
+                currentHealth3
+              )}
+              currentHealth={currentHealth3}
+              cardSelected={cardSelected3}
+              cardAffected={cardToBeAffected3}
+              setCardToBeAffected={setCardToBeAffected3}
+              setCardSelected={setCardSelected3}
+            />
+          ) : (
+            ""
+          )}
         </div>
-        <HeroCard
-          {...player2Hero2}
-          onAbility={onAbility(player2Hero2, setCurrentHealth4, currentHealth4)}
-          cardSelected={cardSelected4}
-          currentHealth={currentHealth4}
-          cardAffected={cardToBeAffected4}
-          setCardToBeAffected={setCardToBeAffected4}
-          setCardSelected={setCardSelected4}
-        />
+        <div className="centerColumn">
+          <div className={heroCard ? "playerBox" : ""}>
+            <div className="nameText">
+              {heroCard ? playerNameEntry2 || "Player Two" : ""}
+            </div>
+            <div className={heroCard ? "turnText cardBorder" : ""}>
+              {heroCard ? yourTurn(2) : ""}
+            </div>
+          </div>
+          <div
+            className={
+              heroCard
+                ? "secondCenterBox pointer centerBtn brownBackGround"
+                : ""
+            }
+            onClick={resetGame}
+          >
+            {heroCard ? "Reset Game" : ""}
+          </div>
+        </div>
+        <div>
+          {heroCard ? (
+            <HeroCard
+              {...player2Hero2}
+              onAbility={onAbility(
+                player2Hero2,
+                setCurrentHealth4,
+                currentHealth4
+              )}
+              currentHealth={currentHealth4}
+              cardSelected={cardSelected4}
+              cardAffected={cardToBeAffected4}
+              setCardToBeAffected={setCardToBeAffected4}
+              setCardSelected={setCardSelected4}
+            />
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

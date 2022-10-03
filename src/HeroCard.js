@@ -10,7 +10,6 @@ import {
 
 const HeroCard = (props) => {
   const {
-    hero,
     setCardSelected,
     setCardToBeAffected,
     name,
@@ -46,8 +45,6 @@ const HeroCard = (props) => {
       setCardToBeAffected(false);
     }
   };
-
-  // console.log(cardAffected);
 
   if (currentHealth === "DEAD") {
     return (
@@ -87,7 +84,7 @@ const HeroCard = (props) => {
         <div
           className="cardBorder selectors pointer"
           onClick={(e) => {
-            setCardToBeAffected(hero);
+            toggleAffectedCard();
           }}
         >
           Affect me!
