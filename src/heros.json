@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Alexander the Great",
+    "strength": 10,
+    "health": 100,
+    "intel": 12,
+    "namePic": "AlexanderTheGreat",
+    "agility": 10
+  },
+  {
+    "name": "Sun Tzu",
+    "strength": 8,
+    "health": 80,
+    "intel": 15,
+    "namePic": "Suntzu",
+    "agility": 3
+  },
+  {
+    "name": "Leonidas",
+    "strength": 14,
+    "health": 100,
+    "intel": 6,
+    "namePic": "Leonidas",
+    "agility": 9
+  },
+  {
+    "name": "Hannibal Barca",
+    "strength": 9,
+    "health": 100,
+    "intel": 13,
+    "namePic": "Hannibal",
+    "agility": 7
+  },
+  {
+    "name": "Julius Caesar",
+    "strength": 12,
+    "health": 115,
+    "intel": 8,
+    "namePic": "Caesar",
+    "agility": 5
+  },
+  {
+    "name": "Miyamoto Musashi",
+    "strength": 13,
+    "health": 70,
+    "intel": 5,
+    "namePic": "Miyamoto",
+    "agility": 16,
+    "country": "Japan"
+  },
+  {
+    "name": "Saladin",
+    "strength": 13,
+    "health": 100,
+    "intel": 6,
+    "namePic": "Saladin",
+    "agility": 12
+  },
+  {
+    "name": "Spartacus",
+    "strength": 17,
+    "health": 100,
+    "intel": 6,
+    "namePic": "Spartacus",
+    "agility": 9
+  },
+  {
+    "name": "Richard I",
+    "strength": 15,
+    "health": 130,
+    "intel": 5,
+    "namePic": "Richard",
+    "agility": 4
+  }
+]

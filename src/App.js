@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./app.css";
+import { useState, useEffect } from "react";
+// import HeroCreationPage from "./HeroCreationPage";
+import Game from "./Game";
+
+const getRandomHero = () => {
+  const randomHero = Math.floor(Math.random() * 9);
+  let randomHero2 = Math.floor(Math.random() * 9);
+  if (randomHero2 === randomHero) {
+    randomHero2 = Math.floor(Math.random() * 9);
+    if (randomHero2 === randomHero) {
+      randomHero2 = Math.floor(Math.random() * 9);
+    }
+    if (randomHero2 === randomHero) {
+      randomHero2 = Math.floor(Math.random() * 9);
+    }
+  }
+  return [randomHero, randomHero2];
+};
+
+const turnOrder = () => Math.floor(Math.random() * 2 + 1);
 
 function App() {
+  // const [resetGame, setResetGame] = useState(false);
+
+  const player1Heros = getRandomHero();
+  const player2Heros = getRandomHero();
+
+  const firstTurn = turnOrder(getRandomHero());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Game
+      player1Heros={player1Heros}
+      player2Heros={player2Heros}
+      firstTurn={firstTurn}
+    />
   );
 }
 

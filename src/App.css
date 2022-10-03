@@ -1,38 +1,190 @@
-.App {
+.main {
+  background-color: rgb(78, 96, 110);
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  color: rgb(255, 8, 0);
+  font-size: 22px;
+  overflow: hidden;
+}
+
+.rowSB {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.selectors {
+  font-size: large;
+  height: fit-content;
+  width: fit-content;
+  margin: 5px 40px;
+  padding: 5px;
+  background-color: beige;
+}
+
+.rotateCard {
+  transform: rotate(180deg);
+}
+.player1 {
+  align-items: flex-end;
+  padding: 0 50px;
+  align-items: center;
+}
+
+.playerBox {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: burlywood;
+  height: 100px;
+  padding: 15px;
+  border-radius: 2%;
+  color: black;
+  width: 200px;
+  font-size: 30px;
+}
+
+.nameText{
+  flex: 1;
+  text-decoration: underline;
+}
+
+.turnText {
+  background-color: beige;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 2%;
+}
+
+.player2 {
+  align-items: flex-start;
+  padding: 0 50px;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  width: 350px;
+  height: 450px;
+  margin: 10px;
+  border-radius: 1.5%;
+}
+
+.cardBackGround {
+  background-color: burlywood;
+}
+
+.backCardColor {
+  background-color: rgb(73, 43, 4);
+}
+
+.rowFlex1 {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 5px;
+  padding: 5px;
+  background-color: beige;
+}
+
+.cardStats {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px;
+  background-color: beige;
+}
+
+.cardAttacks {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px;
+  background-color: beige;
+  align-items: center;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.centerBtn {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardPic {
   display: flex;
-  flex-direction: column;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.picture {
+  border-radius: 5%;
+  border: 2px solid brown;
+  width: 265px;
+  height: 230px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardBorder {
+  color: black;
+  border: 1px solid;
+}
+
+.middleBorder {
+  color: tan;
+  border: 2px solid;
+}
+
+.blackColor{
+  color: black;
+}
+
+.redColor {
+  color: red
+}
+
+.red2Color {
+  color: rgb(233, 103, 124)
+}
+
+.yellowColor {
+  color: rgb(194, 194, 39);
+}
+
+.greenColor {
+  color: green;
+}
+
+.skew {
+  translate: 5%;
+  transform: skew(7deg);
+}
+
+.brownBackGround {
+  background-color: burlywood;
+}
+
+.attacker {
+  background-color: goldenrod;
+  opacity: 90%;
+}
+
+.target {
+  background-color: rgb(126, 2, 2);
+  opacity: 90%;
 }
